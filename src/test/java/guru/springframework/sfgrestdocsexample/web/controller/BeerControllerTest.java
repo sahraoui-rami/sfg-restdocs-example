@@ -59,7 +59,7 @@ class BeerControllerTest {
                 )
                 .andExpect(status().isOk())
                 .andDo(
-                        document("v1/beer",
+                        document("v1/beer-get",
                                 pathParameters(
                                         parameterWithName("beerId").description("UUID of desired beer to get")
                                 ),
@@ -96,7 +96,7 @@ class BeerControllerTest {
                 .andExpect(status().isCreated())
                 .andDo(
                         document(
-                                "v1/beer",
+                                "v1/beer-new",
                                 requestFields(
                                         fields.withPath("id").ignored(),
                                         fields.withPath("version").ignored(),
